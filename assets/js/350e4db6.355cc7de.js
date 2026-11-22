@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([["2831"],{1370(s){s.exports=JSON.parse('{"tag":{"label":"coding","permalink":"/docs/tags/coding","allTagsPath":"/docs/tags","count":1,"items":[{"id":"lld/problems/parking-lot","title":"Parking Lot System","description":"Difficulty LLD","permalink":"/docs/lld/problems/parking-lot"}],"unlisted":false}}')}}]);
