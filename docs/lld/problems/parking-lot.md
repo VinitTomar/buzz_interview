@@ -1,12 +1,12 @@
 ---
 title: Parking Lot System
 sidebar_label: Parking Lot System
-tags: [lld, machine-coding]
+tags: [lld, coding, oop-fundamental, patterns, concurrency-architecture]
 ---
 
 # Parking Lot System
 
-**Difficulty:** Problems | **Track:** LLD
+**Difficulty:** Easy | **Track:** LLD
 
 ## Problem statement
 
@@ -29,7 +29,9 @@ Design a multi-floor parking lot system that manages vehicle entry, spot assignm
 ```java
 // Spot hierarchy
 abstract class ParkingSpot {
-    String spotId; SpotType type; boolean occupied;
+    String spotId; 
+    SpotType type; 
+    boolean occupied;
     abstract boolean canFitVehicle(Vehicle v);
     void assignVehicle(Vehicle v) { ... }
     void removeVehicle() { ... }
@@ -55,8 +57,15 @@ class ParkingLot {                          // Singleton
     Ticket issueTicket(Vehicle v) { ... }
     Receipt processExit(Ticket t) { ... }
 }
-class Ticket { String ticketId; Vehicle vehicle; ParkingSpot spot; Instant entryTime; }
-interface FeeCalculator { double calculate(Ticket t, Instant exitTime); }
+class Ticket { 
+    String ticketId; 
+    Vehicle vehicle; 
+    ParkingSpot spot; 
+    Instant entryTime; 
+}
+interface FeeCalculator { 
+    double calculate(Ticket t, Instant exitTime); 
+}
 class HourlyFeeCalculator implements FeeCalculator { ... }  // Strategy impl
 class PaymentService { Receipt charge(Ticket t, PaymentMethod m) { ... } }
 ```
@@ -84,5 +93,4 @@ class PaymentService { Receipt charge(Ticket t, PaymentMethod m) { ... } }
 
 ## Resources
 
-- [Hello Interview: Parking Lot](https://www.hellointerview.com/learn/code/object-oriented-design/parking-lot)
 - [Grokking OOD: Parking Lot](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-parking-lot.md)
